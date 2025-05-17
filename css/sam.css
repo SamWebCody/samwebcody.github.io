@@ -15,4 +15,8 @@ html {
 
 body {
   display: flex;
+  background-color: #1e1e1e;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
 }
