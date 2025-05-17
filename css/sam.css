@@ -20,3 +20,16 @@ body {
   align-items: stretch;
   flex-direction: column;
 }
+
+#header,
+#footer {
+  flex: 1 1 100px;
+  background-color: black;
+}
+
+main {
+  flex: 1 1 100%;
+  min-width: 320px;
+  max-width: 1200px;
+  padding: 40px;
+}
