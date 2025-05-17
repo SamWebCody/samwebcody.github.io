@@ -69,6 +69,14 @@ h2 {
   font-size: 1.5rem;
 }
 
+h3 {
+  font-weight: 400;
+  font-size: 1.2rem 19.2px;
+  position: relative;
+  margin: 13px auto;
+  color: #2bcbae;
+}
+
 #intro {
   max-width: 800px;
   text-align: center;
