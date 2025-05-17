@@ -4,17 +4,43 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SamWebCody</title>
-        <link rel="stylesheet" href="css/sam.css">
+        <title>SamWebCody un universo de desarrollo simplificado</title>
+        <link rel="stylesheet" href="css/sam.css?v= 1.0.0.1">
     </head>
 
     <body>
         <header id="header"></header>
         <main id="main">
-            <h1>¡Bienvenido a SamWebCody!</h1>
-            <p>Este es el sitio oficial del proyecto.</p>
+            <section id="intro">
+                <h1>Samuel Ramírez Sánchez</h1>
+                <figure class="fotoPerfil perfil-foto">
+                    <img src="img/Samyb.jpg" alt="Samuel Ramírez Sánchez">
+                </figure>
+                <h2>Desarrollador Web, Diseñador Gráfico y Creador Multimedia</h2>
+                <p>
+                    Con más de <span id="yearsExperience"></span> años de experiencia forjada en la práctica y la
+                    resolución de problemas reales,
+                    fusiono tecnología, diseño y creatividad para crear
+                    soluciones digitales efectivas, eficientes y sin complicaciones.<br><br>
+                    Experto en PHP, MySQL, HTML5, CSS3 y JavaScript puro. Evito frameworks innecesarios para ofrecer
+                    máxima velocidad y control.
+                </p>
+                <p>
+                    También soy músico, locutor, productor de audio y video, apasionado por el detalle, el rendimiento y
+                    la autenticidad.
+                </p>
+                <p>
+                    Desde Tijuana, México... al mundo. Bienvenido a mi espacio.
+                </p>
+                <hr>
+            </section>
         </main>
         <footer id="footer"></footer>
     </body>
 
 </html>
+
+<script>
+    const years = new Date().getFullYear() - 1989;
+    document.getElementById('yearsExperience').innerText = years;
+</script>
