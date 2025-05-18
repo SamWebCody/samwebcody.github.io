@@ -15,6 +15,12 @@
 
     <body>
         <header id="header">
+            <div class="switch_de_idioma">
+                <input id="checkbox_lang" class="checkbox" type="checkbox" />
+                <label class="switch switch-idioma" for="checkbox_lang">
+                    <div class="canica"></div>
+                </label>
+            </div>
             <div class="switch_de_tema">
                 <input id="checkbox_theme" class="checkbox" type="checkbox" />
                 <label class="switch" for="checkbox_theme">
@@ -24,12 +30,13 @@
         </header>
         <main id="main">
             <section id="intro">
-                <h1>Samuel Ramírez<br><small class="microHeaderText">CREATIVE DEVELOPER</small></h1>
+                <h1><span data-i18n="titulo">Samuel Ramírez</span><br><small class="microHeaderText"
+                        data-i18n="subtitulo">CREATIVE DEVELOPER</small></h1>
                 <figure class="fotoPerfil perfil-foto">
                     <img src="img/Samyb.jpg" alt="Samuel Ramírez | Creativo y Desarrollador Web" loading="lazy">
                 </figure>
-                <h2>Desarrollador Web, Diseñador Gráfico y Creador Multimedia</h2>
-                <p>
+                <h2 data-i18n="descripcion1">Desarrollador Web, Diseñador Gráfico y Creador Multimedia</h2>
+                <p data-i18n="parrafo1">
                     Con más de <span id="yearsExperience"></span> años de experiencia forjada en la práctica y la
                     resolución de problemas reales,
                     fusiono tecnología, diseño y creatividad para crear
@@ -37,15 +44,15 @@
                     Experto en PHP, MySQL, HTML5, CSS3 y JavaScript puro. Evito frameworks innecesarios para ofrecer
                     máxima velocidad y control.
                 </p>
-                <p>
+                <p data-i18n="parrafo2">
                     También soy músico, locutor, productor de audio y video, apasionado por el detalle, el rendimiento y
                     la autenticidad.
                 </p>
-                <p>
+                <p data-i18n="parrafo3">
                     Desde Tijuana, México... al mundo. Bienvenido a mi espacio.
                 </p>
                 <hr>
-                <h3>My Tech Stack</h3>
+                <h3 data-i18n="stack">My Tech Stack</h3>
                 <div class="listonLogosTec">
                     <a href="https://dev.mysql.com/doc/" target="_blank"><img src="img/logos/apache.svg"
                             alt="Apache"></a>
@@ -61,7 +68,7 @@
                             src="img/logos/js.svg" alt="JavaScript"></a>
                 </div>
                 <br>
-                <h3>My Dev Tools</h3>
+                <h3 data-i18n="herramientas">My Dev Tools</h3>
                 <div class="listonLogosTec">
                     <a href="https://code.visualstudio.com/" target="_blank"><img src="img/logos/vscode.svg"
                             alt="Visual Studio Code"></a>
@@ -76,7 +83,7 @@
                 </div>
 
                 <br>
-                <h3>My Creative Arsenal</h3>
+                <h3 data-i18n="creativas">My Creative Arsenal</h3>
                 <div class="listonLogosTec">
                     <a href="https://affinity.serif.com/en-us/designer/" target="_blank"><img
                             src="img/logos/designer.svg" alt="Affinity Designer"></a>
@@ -92,7 +99,7 @@
                 <br>
                 <br>
 
-                <h2>No busco empleo, no necesito clientes.<br>
+                <h2 data-i18n="cierre">No busco empleo, no necesito clientes.<br>
                     Solo construyo alianzas de valor con visión a futuro.</h2>
             </section>
         </main>
@@ -103,9 +110,10 @@
         </script>
         <script>
             const checkbox_theme = document.getElementById('checkbox_theme');
+            const checkbox_lang = document.getElementById('checkbox_lang');
             const cssLink = document.querySelector('link[rel="stylesheet"]');
 
-            // 1. Cargar tema guardado
+            // === TEMA ===
             const temaGuardado = localStorage.getItem('tema');
             if (temaGuardado === 'oscuro') {
                 checkbox_theme.checked = true;
@@ -115,7 +123,6 @@
                 cssLink.href = 'css/sam-lgt.css?v=1.0.1.3';
             }
 
-            // 2. Guardar tema cuando el usuario lo cambie
             checkbox_theme.addEventListener('change', () => {
                 if (checkbox_theme.checked) {
                     cssLink.href = 'css/sam-dark.css?v=1.0.1.3';
@@ -124,6 +131,33 @@
                     cssLink.href = 'css/sam-lgt.css?v=1.0.1.3';
                     localStorage.setItem('tema', 'claro');
                 }
+            });
+
+            // === IDIOMA ===
+            const aplicarIdioma = (lang) => {
+                document.documentElement.setAttribute('lang', lang);
+                fetch('lang-content/content-index.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        const years = new Date().getFullYear() - 1989;
+                        document.querySelectorAll('[data-i18n]').forEach(el => {
+                            const key = el.getAttribute('data-i18n');
+                            const texto = data[lang][key];
+                            if (texto) {
+                                el.innerHTML = texto.replace('{years}', years);
+                            }
+                        });
+                    });
+            };
+
+            const langGuardado = localStorage.getItem('lang') || 'es';
+            checkbox_lang.checked = langGuardado === 'en';
+            aplicarIdioma(langGuardado);
+
+            checkbox_lang.addEventListener('change', () => {
+                const idioma = checkbox_lang.checked ? 'en' : 'es';
+                localStorage.setItem('lang', idioma);
+                aplicarIdioma(idioma);
             });
         </script>
     </body>

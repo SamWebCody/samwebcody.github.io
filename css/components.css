@@ -1,4 +1,4 @@
-/* BO Theme toggler */
+/* BO Theme toggler para el tema */
 .switch_de_tema {
   position: absolute;
   display: block;
@@ -50,4 +50,42 @@
   background: #fff;
 }
 
-/* EO Theme toggler */
+/* EO Theme toggler para el tema */
+
+/* BO Language toggler para el idioma */
+
+/* BO Language Toggler */
+.switch_de_idioma {
+  position: absolute;
+  display: block;
+  width: 55px;
+  height: 30px;
+  background: #949494;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  right: 135px;
+}
+
+.switch-idioma {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  background-image: url('../img/togglers/lang-es.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.3s ease;
+}
+
+#checkbox_lang:checked~.switch-idioma {
+  background-image: url('../img/togglers/lang-en.png');
+}
+
+#checkbox_lang:checked~.switch-idioma .canica {
+  left: 26px;
+  background: #fff;
+}
+
+/* EO Language Toggler */
