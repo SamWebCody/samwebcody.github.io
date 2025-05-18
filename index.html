@@ -4,6 +4,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self';">
+        <meta http-equiv="X-Frame-Options" content="DENY">
+        <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
+        <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+        <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
         <title>SamWebCody un universo de desarrollo simplificado</title>
         <meta name="description"
             content="Desarrollador Web, Diseñador Gráfico y Creador Multimedia, diseño de aplicacions web, desarrollo de software, diseño gráfico, producción multimedia, Tijuana, México.">
@@ -11,21 +17,26 @@
         <link rel="stylesheet" href="css/components.css?v=1.0">
         <link rel="icon" type="image/png" href="favicon.png">
 
+
     </head>
 
     <body>
         <header id="header">
             <div class="switch_de_idioma">
                 <input id="checkbox_lang" class="checkbox" type="checkbox" />
-                <label class="switch switch-idioma" for="checkbox_lang">
-                    <div class="canica"></div>
-                </label>
+                <div>
+                    <label class="switch switch-idioma" for="checkbox_lang">
+                        <div class="canica"></div>
+                    </label>
+                </div>
             </div>
             <div class="switch_de_tema">
                 <input id="checkbox_theme" class="checkbox" type="checkbox" />
-                <label class="switch" for="checkbox_theme">
-                    <div class="canica"></div>
-                </label>
+                <div>
+                    <label class="switch" for="checkbox_theme">
+                        <div class="canica"></div>
+                    </label>
+                </div>
             </div>
         </header>
         <main id="main">
