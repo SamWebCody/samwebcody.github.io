@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SamWebCody un universo de desarrollo simplificado</title>
+        <meta name="description"
+            content="Desarrollador Web, Diseñador Gráfico y Creador Multimedia, diseño de aplicacions web, desarrollo de software, diseño gráfico, producción multimedia, Tijuana, México.">
         <link rel="stylesheet" href="css/sam.css?v=1.0.1.3">
         <link rel="icon" type="image/png" href="favicon.png">
 
     </head>
 
     <body>
-        <header id="header"></header>
+        <header id="header">
+            <!-- Pendiente la creación del nav hasta no tener clara la estructura general del proyecto -->
+        </header>
         <main id="main">
             <section id="intro">
                 <h1>Samuel Ramírez Sánchez</h1>
                 <figure class="fotoPerfil perfil-foto">
-                    <img src="img/Samyb.jpg" alt="Samuel Ramírez Sánchez">
+                    <img src="img/Samyb.jpg" alt="Samuel Ramsan Creativo y Desarrollador Web" loading="lazy">
                 </figure>
                 <h2>Desarrollador Web, Diseñador Gráfico y Creador Multimedia</h2>
                 <p>
@@ -86,12 +90,11 @@
                     Solo construyo alianzas de valor con visión a futuro.</h2>
             </section>
         </main>
-        <footer id="footer"></footer>
+        <footer id="footer"><!-- El footer se irá populando conforme se requiera agregar ligas. --></footer>
+        <script loading="lazy">
+            const years = new Date().getFullYear() - 1989;
+            document.getElementById('yearsExperience').innerText = years;
+        </script>
     </body>
 
 </html>
-
-<script>
-    const years = new Date().getFullYear() - 1989;
-    document.getElementById('yearsExperience').innerText = years;
-</script>
