@@ -1,0 +1,51 @@
+/* BO Theme toggler */
+.switch_de_tema {
+  display: block;
+  width: 55px;
+  height: 30px;
+  background: #949494;
+  border-radius: 15px;
+  border: 1px solid #fff;
+}
+
+.switch {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  background-image: url('../img/togglers/light-mode.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.3s ease;
+}
+
+.checkbox:checked~#switch {
+  background-image: url('../img/togglers/dark-mode.png');
+}
+
+.checkbox {
+  display: none;
+}
+
+.canica {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: #303030;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  flex: 0 0 24px;
+  margin-left: 2px;
+  cursor: pointer;
+  left: 0px;
+  transition: all 0.3s ease;
+}
+
+.checkbox:checked~#switch .canica {
+  left: 26px;
+  background: #fff;
+}
+
+/* EO Theme toggler */
