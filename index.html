@@ -15,10 +15,10 @@
 
     <body>
         <header id="header">
-            <div id="switch_de_tema" class="switch_de_tema">
-                <input id="checkbox" class="checkbox" type="checkbox" />
-                <label id="switch" class="switch" for="checkbox">
-                    <div id="canica" class="canica"></div>
+            <div class="switch_de_tema">
+                <input id="checkbox_theme" class="checkbox" type="checkbox" />
+                <label class="switch" for="checkbox_theme">
+                    <div class="canica"></div>
                 </label>
             </div>
         </header>
@@ -102,20 +102,28 @@
             document.getElementById('yearsExperience').innerText = years;
         </script>
         <script>
-            const checkbox = document.getElementById('checkbox');
+            const checkbox_theme = document.getElementById('checkbox_theme');
             const cssLink = document.querySelector('link[rel="stylesheet"]');
 
-            checkbox.addEventListener('change', () => {
-                if (checkbox.checked) {
+            // 1. Cargar tema guardado
+            const temaGuardado = localStorage.getItem('tema');
+            if (temaGuardado === 'oscuro') {
+                checkbox_theme.checked = true;
+                cssLink.href = 'css/sam-dark.css?v=1.0.1.3';
+            } else {
+                checkbox_theme.checked = false;
+                cssLink.href = 'css/sam-lgt.css?v=1.0.1.3';
+            }
+
+            // 2. Guardar tema cuando el usuario lo cambie
+            checkbox_theme.addEventListener('change', () => {
+                if (checkbox_theme.checked) {
                     cssLink.href = 'css/sam-dark.css?v=1.0.1.3';
+                    localStorage.setItem('tema', 'oscuro');
                 } else {
                     cssLink.href = 'css/sam-lgt.css?v=1.0.1.3';
+                    localStorage.setItem('tema', 'claro');
                 }
-            });
-            checkbox.addEventListener('change', () => {
-                document.getElementById('switch_de_tema').style.border = checkbox.checked
-                    ? '1px solid #737373'
-                    : '1px solid #fff';
             });
         </script>
     </body>

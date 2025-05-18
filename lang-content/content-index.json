@@ -1,0 +1,28 @@
+{
+  "es": {
+    "titulo": "Samuel Ramírez",
+    "subtitulo": "CREATIVE DEVELOPER",
+    "descripcion1": "Desarrollador Web, Diseñador Gráfico y Creador Multimedia",
+    "parrafo1": "Con más de {years} años de experiencia forjada en la práctica y la resolución de problemas reales, fusiono tecnología, diseño y creatividad para crear soluciones digitales efectivas, eficientes y sin complicaciones.",
+    "parrafo2": "Experto en PHP, MySQL, HTML5, CSS3 y JavaScript puro. Evito frameworks innecesarios para ofrecer máxima velocidad y control.",
+    "parrafo3": "También soy músico, locutor, productor de audio y video, apasionado por el detalle, el rendimiento y la autenticidad.",
+    "parrafo4": "Desde Tijuana, México... al mundo. Bienvenido a mi espacio.",
+    "stack": "My Tech Stack",
+    "herramientas": "My Dev Tools",
+    "creativas": "My Creative Arsenal",
+    "cierre": "No busco empleo, no necesito clientes. Solo construyo alianzas de valor con visión a futuro."
+  },
+  "en": {
+    "titulo": "Samuel Ramírez",
+    "subtitulo": "CREATIVE DEVELOPER",
+    "descripcion1": "Web Developer, Graphic Designer & Multimedia Creator",
+    "parrafo1": "With over {years} years of hands-on experience solving real-world problems, I blend technology, design, and creativity to craft digital solutions that are effective, efficient, and effortless.",
+    "parrafo2": "Expert in PHP, MySQL, HTML5, CSS3, and vanilla JavaScript. I avoid unnecessary frameworks to deliver maximum speed and control.",
+    "parrafo3": "I'm also a musician, voice-over artist, and audio/video producer passionate about detail, performance, and authenticity.",
+    "parrafo4": "From Tijuana, Mexico... to the world. Welcome to my space.",
+    "stack": "My Tech Stack",
+    "herramientas": "My Dev Tools",
+    "creativas": "My Creative Arsenal",
+    "cierre": "I'm not looking for a job or clients. I build valuable partnerships with a future-focused vision."
+  }
+}

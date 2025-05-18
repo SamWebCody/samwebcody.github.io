@@ -1,11 +1,13 @@
 /* BO Theme toggler */
 .switch_de_tema {
+  position: absolute;
   display: block;
   width: 55px;
   height: 30px;
   background: #949494;
   border-radius: 15px;
   border: 1px solid #fff;
+  right: 68px;
 }
 
 .switch {
@@ -21,7 +23,7 @@
   transition: all 0.3s ease;
 }
 
-.checkbox:checked~#switch {
+.checkbox:checked~.switch {
   background-image: url('../img/togglers/dark-mode.png');
 }
 
@@ -43,7 +45,7 @@
   transition: all 0.3s ease;
 }
 
-.checkbox:checked~#switch .canica {
+.checkbox:checked~.switch .canica {
   left: 26px;
   background: #fff;
 }
