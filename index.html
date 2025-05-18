@@ -4,44 +4,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Security-Policy"
-            content="default-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self';">
-        <meta http-equiv="X-Frame-Options" content="DENY">
-        <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
-        <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-        <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
         <title>SamWebCody un universo de desarrollo simplificado</title>
         <meta name="description"
             content="Desarrollador Web, Diseñador Gráfico y Creador Multimedia, diseño de aplicacions web, desarrollo de software, diseño gráfico, producción multimedia, Tijuana, México.">
         <link rel="stylesheet" href="css/sam-lgt.css?v=1.0.1.3">
         <link rel="stylesheet" href="css/components.css?v=1.0">
         <link rel="icon" type="image/png" href="favicon.png">
-
-
     </head>
 
     <body>
         <header id="header">
             <div class="switch_de_idioma">
                 <input id="checkbox_lang" class="checkbox" type="checkbox" />
-                <div>
-                    <label class="switch switch-idioma" for="checkbox_lang">
-                        <div class="canica"></div>
-                    </label>
-                </div>
+                <label class="switch switch-idioma" for="checkbox_lang">
+                    <div class="canica"></div>
+                </label>
             </div>
             <div class="switch_de_tema">
                 <input id="checkbox_theme" class="checkbox" type="checkbox" />
-                <div>
-                    <label class="switch" for="checkbox_theme">
-                        <div class="canica"></div>
-                    </label>
-                </div>
+                <label class="switch" for="checkbox_theme">
+                    <div class="canica"></div>
+                </label>
             </div>
         </header>
         <main id="main">
             <section id="intro">
-                <h1><span data-i18n="titulo">Samuel Ramírez</span><br><small class="microHeaderText"
+                <h1><span data-i18n="titulo">Samuel Ramírez</span><small class="microHeaderText"
                         data-i18n="subtitulo">CREATIVE DEVELOPER</small></h1>
                 <figure class="fotoPerfil perfil-foto">
                     <img src="img/Samyb.jpg" alt="Samuel Ramírez | Creativo y Desarrollador Web" loading="lazy">
@@ -115,62 +103,9 @@
             </section>
         </main>
         <footer id="footer"><!-- El footer se irá populando conforme se requiera agregar ligas. --></footer>
-        <script loading="lazy">
-            const years = new Date().getFullYear() - 1989;
-            document.getElementById('yearsExperience').innerText = years;
-        </script>
-        <script>
-            const checkbox_theme = document.getElementById('checkbox_theme');
-            const checkbox_lang = document.getElementById('checkbox_lang');
-            const cssLink = document.querySelector('link[rel="stylesheet"]');
-
-            // === TEMA ===
-            const temaGuardado = localStorage.getItem('tema');
-            if (temaGuardado === 'oscuro') {
-                checkbox_theme.checked = true;
-                cssLink.href = 'css/sam-dark.css?v=1.0.1.3';
-            } else {
-                checkbox_theme.checked = false;
-                cssLink.href = 'css/sam-lgt.css?v=1.0.1.3';
-            }
-
-            checkbox_theme.addEventListener('change', () => {
-                if (checkbox_theme.checked) {
-                    cssLink.href = 'css/sam-dark.css?v=1.0.1.3';
-                    localStorage.setItem('tema', 'oscuro');
-                } else {
-                    cssLink.href = 'css/sam-lgt.css?v=1.0.1.3';
-                    localStorage.setItem('tema', 'claro');
-                }
-            });
-
-            // === IDIOMA ===
-            const aplicarIdioma = (lang) => {
-                document.documentElement.setAttribute('lang', lang);
-                fetch('lang-content/content-index.json')
-                    .then(res => res.json())
-                    .then(data => {
-                        const years = new Date().getFullYear() - 1989;
-                        document.querySelectorAll('[data-i18n]').forEach(el => {
-                            const key = el.getAttribute('data-i18n');
-                            const texto = data[lang][key];
-                            if (texto) {
-                                el.innerHTML = texto.replace('{years}', years);
-                            }
-                        });
-                    });
-            };
-
-            const langGuardado = localStorage.getItem('lang') || 'es';
-            checkbox_lang.checked = langGuardado === 'en';
-            aplicarIdioma(langGuardado);
-
-            checkbox_lang.addEventListener('change', () => {
-                const idioma = checkbox_lang.checked ? 'en' : 'es';
-                localStorage.setItem('lang', idioma);
-                aplicarIdioma(idioma);
-            });
-        </script>
+        <!-- Punto de referencia para recuperación en caso de fallo. -->
+        <script src="js/anyos_experiencia.js"></script>
+        <script src="js/toggles.js"></script>
     </body>
 
 </html>
