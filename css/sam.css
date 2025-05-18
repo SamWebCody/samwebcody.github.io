@@ -138,11 +138,14 @@ hr {
 }
 
 .listonLogosTec a {
+  display: flex;
   text-decoration: none;
   flex: 0 0 auto;
   height: 70px;
   opacity: .8;
   transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
 }
 
 .listonLogosTec a:hover {
