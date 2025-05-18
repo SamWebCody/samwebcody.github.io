@@ -130,14 +130,23 @@ hr {
   flex-direction: row;
   background-color: #232323;
   border-radius: 50px;
+  box-shadow: -13px 23px 24px 0 #0f0f0f70;
+  border: 2px solid #2a2a2a;
 }
 
 #listonLogosTec a {
   text-decoration: none;
   flex: 0 0 auto;
-  width: 80px;
   height: 80px;
+  opacity: .8;
+  transition: all 0.3s ease;
 }
+
+#listonLogosTec a:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
 
 #listonLogosTec a img {
   width: 100%;
